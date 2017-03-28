@@ -22,7 +22,7 @@ var GameModule = window.GameModule || {};
 
 		var checkStap = function(whoMove) {
 
-			var checkObj = game.checkWin(board.getBoard(), whoMove);
+			var checkObj = game.checkWin(board.getAllStaps(), board.getBoard(), whoMove);
 
 			if (checkObj.is_win) {
 

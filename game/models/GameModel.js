@@ -173,41 +173,30 @@ var GameModule = window.GameModule || {};
 			return (staps + 1)%2 == 0 ? 0 : 1;
 		}
 
-			this.checkWin = function(allStaps, board, type) {
+		this.checkWin = function(lastX, lastY, board, type) {
+			var winData,
+				lastX = parseInt(lastX, 10),
+				lastY = parseInt(lastY, 10),
 
-			var winData;
-			
+			winData = chekVertical(board, lastX, lastY, type);
 
-			for(var i = 0; i < allStaps.length; i++) {
-				var countMatch = 0,
-					x = allStaps[i].x, 
-					y = allStaps[i].y;
-
-				winData = chekVertical(board, x, y, type);
-
-				if(winData.is_win) {
-					break;
-				}
-
-				winData = chekHorisontal(board, x, y, type);
-
-				if(winData.is_win) {
-					break;
-				}
-
-				winData = chekRightDiagonal(board, x, y, type);
-
-				if(winData.is_win) {
-					break;
-				}
-
-				winData = chekLeftDiagonal(board, x, y, type);
-
-				if(winData.is_win) {
-					break;
-				}
-
+			if(winData.is_win) {
+				return winData;
 			}
+
+			winData = chekHorisontal(board, lastX, lastY, type);
+
+			if(winData.is_win) {
+				return winData;
+			}
+
+			winData = chekRightDiagonal(board, lastX, lastY, type);
+
+			if(winData.is_win) {
+				return winData;
+			}
+
+			winData = chekLeftDiagonal(board, lastX, lastY, type);
 
 
 			return winData;	

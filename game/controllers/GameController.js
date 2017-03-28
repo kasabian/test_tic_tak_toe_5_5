@@ -20,9 +20,9 @@ var GameModule = window.GameModule || {};
 			view.renderStat(game.getStat(), statElId); 
 		}
 
-		var checkStap = function(whoMove) {
+		var checkStap = function(whoMove, lastX, lastY) {
 
-			var checkObj = game.checkWin(board.getAllStaps(), board.getBoard(), whoMove);
+			var checkObj = game.checkWin(lastX, lastY, board.getBoard(), whoMove);
 
 			if (checkObj.is_win) {
 
@@ -43,7 +43,7 @@ var GameModule = window.GameModule || {};
 
 				board.setStap(botCoords[0], botCoords[1], whoMove);
 			 
-			 	checkStap(whoMove);
+			 	checkStap(whoMove, botCoords[0], botCoords[1]);
 
 			 	game.moveUser();
 
@@ -65,7 +65,7 @@ var GameModule = window.GameModule || {};
 
 				game.moveUser();
 
-				checkStap(whoMove);
+				checkStap(whoMove, x, y);
 
 				render();
 

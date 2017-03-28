@@ -4,7 +4,6 @@ var GameModule = window.GameModule || {};
 
 	module.BoardModel = function(x, y) {
 		var board = [],
-			saveStaps = [],
 			boardX = x,
 			helper = new GameModule.Helper(),
 			boardY = y;
@@ -44,22 +43,11 @@ var GameModule = window.GameModule || {};
 			return board;
 		}
 
-		this.getAllStaps = function() {
-
-			return saveStaps;				
-		}
-
 		this.setStap = function(x, y, type) {
 
 			if(board[y][x] == -1) {
 
 				board[y][x] = type;
-
-				saveStaps.push({
-					x: parseInt(x, 10),
-					y: parseInt(y, 10),
-					type: type
-				});
 
 				return true;
 			}

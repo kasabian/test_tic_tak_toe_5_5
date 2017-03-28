@@ -1,0 +1,136 @@
+.text_center{
+	text-align:center;
+}
+
+.game_board{
+	margin: auto;
+	margin-top: 20px;
+}
+
+	.game_board td{
+		border: 1px solid #d0d0d0;
+    	padding: 20px;
+    	cursor: pointer;
+	}
+
+	
+.sprite{
+	background-image: url(../images/sprite.png);
+    background-size: 180% 100%;
+}	
+
+	.sprite.zero{
+		background-position: 0px 1px;
+	}
+
+	.sprite.x{
+	 	background-position: -35px 4px;
+	}
+
+	.sprite.x-vertical_line:after{
+	 	content: "";
+	 	display: block;
+		position: absolute;
+		height: 42px;
+		background-color: #f90606;
+		margin-top: -21px;
+		margin-left: -3px;
+		width: 4px;
+	}
+
+	.sprite.y-vertical_line:after{
+	 	content: "";
+	 	display: block;
+		position: absolute;
+		height: 42px;
+		background-color: #0c06f9;
+		margin-top: -21px;
+		margin-left: -3px;
+		width: 4px;
+	}
+
+	.sprite.x-horisontal_line:after{
+	 	content: "";
+	 	display: block;
+		position: absolute;
+		height: 4px;
+		background-color: #f90606;
+		margin-top: -3px;
+		margin-left: -21px;
+		width: 42px;
+	}
+
+	.sprite.y-horisontal_line:after{
+	 	content: "";
+	 	display: block;
+		position: absolute;
+		height: 4px;
+		background-color: #0c06f9;
+		margin-top: -3px;
+		margin-left: -21px;
+		width: 42px;
+	}
+
+	.sprite.x-left_line:after{
+	 	content: "";
+	    display: block;
+	    position: absolute;
+	    height: 4px;
+	    background-color: #f90606;
+	    margin-top: -2px;
+	    margin-left: -28px;
+	    width: 59px;
+
+	    -ms-transform: rotate(45deg);
+	    -webkit-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+
+	.sprite.y-left_line:after{
+	 	content: "";
+	    display: block;
+	    position: absolute;
+	    height: 4px;
+	    background-color: #0c06f9;
+	    margin-top: -2px;
+	    margin-left: -28px;
+	    width: 59px;
+
+	    -ms-transform: rotate(45deg);
+	    -webkit-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+
+	.sprite.x-right_line:after{
+	 	content: "";
+	    display: block;
+	    position: absolute;
+	    height: 4px;
+	    background-color: #f90606;
+	    margin-top: -2px;
+	    margin-left: -28px;
+	    width: 59px;
+
+	    -ms-transform: rotate(-45deg);
+	    -webkit-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	}
+
+	.sprite.y-right_line:after{
+	 	content: "";
+	    display: block;
+	    position: absolute;
+	    height: 4px;
+	    background-color: #0c06f9;
+	    margin-top: -2px;
+	    margin-left: -28px;
+	    width: 59px;
+
+	    -ms-transform: rotate(-45deg);
+	    -webkit-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	}
+
+.stat_header{
+	color: gray;
+}	
